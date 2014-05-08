@@ -8,7 +8,7 @@
  *  MIT License
  */
 
-(function() {
+(function(root) {
   // setup
   var cache = {};
 
@@ -1229,9 +1229,9 @@
 
   // define globally in case AMD is not available or available but not used
 
-  if (typeof window !== 'undefined') {
-    window.Howler = Howler;
-    window.Howl = Howl;
+  if (typeof root !== 'undefined') {
+    root.Howler = Howler;
+    root.Howl = Howl;
   }
 
-})();
+})(Tube);
